@@ -1,0 +1,17 @@
+class Labka:
+    def ob4uslennya(self, i, j):
+        sum = 0
+        for n in range(0, int(i)):
+            for k in range(0, int(j)):
+                try:
+                    sum += (n - k)/n
+                except ZeroDivisionError:
+                    print("Деление на ноль")
+                    exit(0)
+        print(sum)
+
+
+i = float(input())
+j = float(input())
+class_object = Labka
+class_object.ob4uslennya(True, i, j)
