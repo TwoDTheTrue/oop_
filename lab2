@@ -1,0 +1,50 @@
+'''
+c5 = 8217 % 5 == 2
+c7 = 8217 % 7 == 6
+c11 = 8217 % 11 == 0
+print(c5, c7, c11)
+'''
+
+
+class Laba2:
+    def __init__(self):
+        self.C_matrix = [[1, 7, 3],
+                         [5, 7, 9],
+                         [54, 56, 78]]
+        self.B_matrix = [[4, 5, 6],
+                         [5, 6, 7],
+                         [6, 7, 8]]
+
+    def task1(self):
+        a = 0
+        for i in range(len(self.C_matrix)):
+            b = 0
+            for j in range(len(self.C_matrix)):
+                self.C_matrix[a][b] = float(self.C_matrix[a][b]) + float(self.B_matrix[a][b])
+                b += 1
+            a += 1
+        for i in self.C_matrix:
+            print(i)
+
+    def task2(self):
+        num_for_iter = 0
+
+        def list_creator(num):
+            _list = []
+            for i in self.C_matrix:
+                _list.append(i[num])
+            return _list
+
+        for i in self.C_matrix:
+            a = list_creator(num_for_iter)
+            if a.count(min(a)) != 1:
+                print(min(a) * a.count(min(a)))
+            else:
+                print(min(a))
+            num_for_iter += 1
+
+
+
+class_obj = Laba2()
+class_obj.task1()
+class_obj.task2()
