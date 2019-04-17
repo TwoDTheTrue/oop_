@@ -1,5 +1,6 @@
 class Labka:
-    def ob4uslennya(self, i, j):
+    @staticmethod
+    def ob4uslennya(i, j):
         sum = 0
         for n in range(0, int(i)):
             for k in range(0, int(j)):
@@ -14,4 +15,4 @@ class Labka:
 i = float(input())
 j = float(input())
 class_object = Labka
-class_object.ob4uslennya(True, i, j)
+class_object.ob4uslennya(i, j)
