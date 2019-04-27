@@ -1,0 +1,51 @@
+#print(8217%11)
+class Student:
+    def __init__(self, name, oop_bal, angla_bal, dm_bal, fp_bal):
+        self.name = name
+        self.oop_bal = oop_bal
+        self.angla_bal = angla_bal
+        self.dm_bal = dm_bal
+        self.fp_bal = fp_bal
+
+    def get_name(self):
+        return self.name
+
+    def get_oop(self):
+        return self.oop_bal
+
+    def get_angla(self):
+        return self.angla_bal
+
+    def get_dm(self):
+        return self.dm_bal
+
+    def get_fp(self):
+        return self.fp_bal
+
+    def __str__(self):
+        return 'name: ' + self.name + ' | ' + 'oop bal: ' + str(self.oop_bal) + ' | ' + 'angla bal: ' + str(self.angla_bal) + ' | ' + 'dm bal: ' + str(self.dm_bal) + ' | ' + 'fp bal: ' + str(self.fp_bal)
+
+
+class Lab4:
+    @staticmethod
+    def Main():
+        arr = []
+        arr.append(Student('Vlad', 60, 36, 60, 90))
+        arr.append(Student('PavelItel228', 100, 60, 75, 80))
+        arr.append(Student('Andrey', 61, 70, -1, -100))
+        print('Not sorted: ')
+        for i in arr:
+            print(i)
+        print('----------------------------------------------------------------------')
+        print('Sorted by name: ')
+        arr.sort(key=lambda x: x.get_name())
+        for i in arr:
+            print(i)
+        print('----------------------------------------------------------------------')
+        print('Sorted by oop bal and reversed')
+        arr.sort(key=lambda x: x.get_oop(), reverse=True)
+        for i in arr:
+            print(i)
+
+
+Lab4.Main()
