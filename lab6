@@ -1,0 +1,48 @@
+class Armor:
+    def __init__(self, type_of_armor, weight, price):
+        self.type_of_armor = type_of_armor
+        self.weight = weight
+        self.price = price
+
+    def return_type(self):
+        return self.type_of_armor
+
+    def return_weight(self):
+        return self.weight
+
+    def return_price(self):
+        return self.price
+
+    def __str__(self):
+        return 'Type of armor: ' + self.type_of_armor + ' | ' + 'Weight: ' + str(self.weight) + ' | ' + 'Price: ' + str(self.price)
+
+class Helm(Armor):
+    pass
+
+
+class Body(Armor):
+    pass
+
+
+class Gloves(Armor):
+    pass
+
+
+class Boots(Armor):
+    pass
+
+
+class Main:
+    full_set = [Helm('Helm', 1.2, 1200), Body('Body', 9, 2800), Gloves('Gloves', 2, 1100), Boots('Boots', 1.5, 1000)]
+    cost_of_ammunition = 0
+    for i in full_set:
+        cost_of_ammunition += i.return_price()
+    print('Whole ammunition costs ' + str(cost_of_ammunition) + ' gold')
+    full_set.sort(key=lambda x: x.return_weight())
+    print('Sorted by weight: ')
+    for i in full_set:
+        print(i)
+
+
+if __name__ == '__main__':
+    Main()
